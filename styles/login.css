@@ -1,0 +1,22 @@
+.light{
+    background: white;
+    color: black;
+}
+.dark{
+    background: black;
+    color: white;
+}
+#toogle{
+    display: none;
+}
+button{
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+body.dark .btn{ 
+    color: white;
+    background: black;
+    border: 1px solid white;
+}

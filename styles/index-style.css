@@ -1,0 +1,98 @@
+/*About*/
+.section-about{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-article{
+    display: grid;
+    gap: 20px;
+    text-align: center;
+}
+.about-img{
+    border-radius: 10px;
+}
+
+/*Download Buttons*/
+.content-btn-download{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-self: center;
+}
+.btn-download{
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    color: #000000;
+}
+.btn-download:hover{
+    box-shadow: 0px 5px 0px #000000;
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.ic-download{
+    font-size: 35px;
+}
+.btn-download-content{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+/*Brawlers*/
+.section-brawlers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.brawlers-article{
+    display: grid;
+    gap: 20px;
+    text-align: center;
+}
+
+/*Modos de Juego*/
+.section-modos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.modos-article{
+    display: grid;
+    gap: 20px;
+    text-align: center;
+}
+
+/*Competitivo*/
+.section-competitivo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.competitivo-article{
+    display: grid;
+    gap: 20px;
+    text-align: center;
+}
+.competitivo-img{
+    border-radius: 10px;
+}
+.img-section{
+    width: 100%;
+}
+.content-img{
+    display: flex;
+    justify-content: center;
+}
