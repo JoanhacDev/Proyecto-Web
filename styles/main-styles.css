@@ -8,28 +8,81 @@
     box-sizing: border-box;
     font-family: "Asap";
 }
-/* html{
-    cursor: url(../imgs/list_style.png), auto;
-} */
+a{
+    text-decoration: none;
+}
 :root{
     scroll-behavior: smooth;
     --color-primario1: #febf21;
     --color-primario2: #ef1918;
+    --color-primario3: #f96f00;
+    --bg-dark: #0f0f0f;
+    --bg-light: #fff0f0;
 }
+
 /* Variantes de negro
 -- Ceniza: #212322
 -- Negro Neutro: #222223
 -- Ahumado: 25282a
 */
+html{
+    /* cursor: url(../imgs/list_style.png), auto; */
+    scrollbar-color: var(--color-primario3) var(--bg-dark);
+}
 body{
     /* background-color: #fde3d3; */
-    background-color: #fffbf3;
     /* background-color: #0f0f0f; */
+    background-color: var(--bg-light);
+    transition: 0.3s all;
 }
+.dark{
+    transition: 0.3s all;
+    background-color: var(--bg-dark);
+    color: white;
+}
+/*Toogle Switch*/
+#toogle{
+    display: none;
+}
+#label-toogle{
+    color: white;
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    padding: 5px 8px;
+    box-shadow: inset 0px 0px 2px #000000, inset 0 0 10px #000000f0;
+    border-radius: 150px;
+    background: var(--color-primario1);
+    display: flex;
+    justify-content: space-between;
+    transition: 1s ease;
+}
+#label-toogle::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* z-index: -2; */
+    right: 0;
+    transform: translate(0, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+body.dark #label-toogle{
+    background: #51009c;
+}
+body.dark #label-toogle::before{
+    transition: transform 0.3s ease;
+    transform: translate(-100%, -50%);
+}
+
+
 /* Navegación */
 .main-nav{
-    background-color: #0f0f0f;
-    box-shadow: 0 1px 25px #8a868673;
+    background-color: var(--bg-dark);
+    box-shadow: 0 2px 5px #3838381f;
     height: 70px;
     display: flex;
     align-items: center;
@@ -45,7 +98,6 @@ body{
 }
 .nav-img:hover{
     animation: imgRotate 2s linear infinite;
-    filter: drop-shadow(0px 0px 2px #fcbd03);
 }
 @keyframes imgRotate {
     from{
@@ -56,10 +108,14 @@ body{
     }
 }
 .nav-menu{
-    color: rgb(255, 145, 0);
+    background: linear-gradient(315deg, var(--color-primario1), var(--color-primario2));
+    border-radius: 5px;
     z-index: 100;
     cursor: pointer;
     font-size: 30px;
+}
+body.dark .nav-menu{
+    color: #000000;
 }
 .nav-list{
     position: absolute;
@@ -68,7 +124,7 @@ body{
     top: 0;
     bottom: 0;
     height: 100vh;
-    background: #0f0f0f;
+    background: var(--bg-dark);
     list-style: none;
     padding: 0;
     display: grid;
@@ -100,7 +156,6 @@ body{
     right: 100%;
     left: 0;
     height: 5px;
-    color: #1877f2;
     -webkit-transition: right 0.3s ease-out;
     transition: right 0.3s ease-out;
 }
@@ -127,51 +182,66 @@ main{
 }
 
 /*Botones*/
+
 .button {
-    position: relative;
-    overflow: hidden;
-    height: 3rem;
-    padding: 0 2rem;
-    border-radius: 1.5rem;
-    background: #ff5e00;
-    background-size: 400%;
-    color: #000000;
-    border: none;
+    align-items: center;
+    background-image: linear-gradient(144deg, var(--color-primario1), var(--color-primario3) 50%,var(--color-primario2));
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
     cursor: pointer;
+    transition: all .3s;
     justify-self: center;
 }
-.button:hover::before {
-    transform: scaleX(1);
-}
-.button-content {
-    position: relative;
+
+.button:active,
+.button:hover {
+    outline: 0;
 }
 
-.button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
+.button span {
+    background-color: var(--bg-light);
+    padding: 12px 20px;
+    border-radius: 6px;
     width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    background: linear-gradient(
-    82.3deg,
-    #febf21 10.8%,
-    #ff5e00 94.3%
-    );
-    transition: all 0.475s;
+    height: 100%;
+    transition: 300ms;
+    color: #000000;
 }
+body.dark button span{
+    background-color: var(--bg-dark);
+    color: white;
+}
+
+.button:hover span {
+    background: none;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
 
 /*Footer*/
 .footer {
-    background-color: #0f0f0f;
+    background-color: var(--bg-dark);
     /* background-color: #fde3d3; */
     /* margin-top: auto; */
-    padding: 50px 25px;
-    box-shadow: 0 -1px 25px #8a868673;
+    padding: 50px 25px;    
+    box-shadow: 0 -2px 5px #3838381f;
     color: white;
 }
 
@@ -214,7 +284,6 @@ main{
     position: absolute;
     top: 0;
     font-size: 14px;
-    /* background: var(--nav-bg); */
     color: #fff;
     padding: 5px 8px;
     border-radius: 5px;
@@ -229,7 +298,6 @@ main{
     content: "";
     height: 8px;
     width: 8px;
-    /* background: var(--nav-bg); */
     bottom: -3px;
     left: 50%;
     transform: translate(-50%) rotate(45deg);
@@ -276,16 +344,6 @@ main{
 }
 
 /*Responsive*/
-/*Nav 500*/
-@media (min-width: 450px) {
-    .content-btn-download{
-        flex-direction: row;
-        gap: 20px;
-    }
-    .content-img{
-        width: 60%;
-    }
-}
 @media (min-width: 550px) {
     .nav-menu{
         display: none;
@@ -308,40 +366,15 @@ main{
         color: white;
         text-decoration: none;
     }
-    .content-img{
-        width: 50%;
-    }
 }
-
 @media (min-width: 860px) {
-    .section-about{
-        flex-direction: row;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .content-img{
-        width: 100%;
-    }
-    .img-section{
-        width: 80%;
-    }
-    .content-btn-download{
-        /* flex-direction: column; */
-        gap: 20px;
-    }
-    .section-brawlers{
-        flex-direction: row;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .section-modos{
-        flex-direction: row;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .section-competitivo{
-        flex-direction: row;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+    h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px
+}
+p{
+    font-size: 18px;
+}
 }

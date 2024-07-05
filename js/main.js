@@ -11,3 +11,19 @@ linksNav.forEach(function (link) {
         navList.classList.remove('nav-list-show');
     })
 })
+
+/**
+ * Modo Oscuro
+ */
+
+const toogleMode = document.getElementById("toogle");
+const labelToogle = document.getElementById("label-toogle");
+
+toogleMode.addEventListener("click", (e) => {
+    let checked = e.target.checked;
+    document.body.classList.toggle("dark");
+
+    // checked == true 
+    // ? labelToogle.innerHTML = '<i class="ph ph-moon"></i>'
+    // : labelToogle.innerHTML = '<i class="ph ph-sun"></i>';
+});

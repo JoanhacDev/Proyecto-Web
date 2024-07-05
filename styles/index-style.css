@@ -23,8 +23,7 @@
     justify-self: center;
 }
 .btn-download{
-    background-color: #ffffff;
-    border: 1px solid #000000;
+    background-color: #080808;
     border-radius: 10px;
     padding: 10px 15px;
     display: flex;
@@ -32,21 +31,36 @@
     align-items: center;
     gap: 10px;
     transition: 0.3s;
-    color: #000000;
+    color: #ffffff;
 }
 .btn-download:hover{
-    box-shadow: 0px 5px 0px #000000;
-    transform: translateY(-5px);
+    box-shadow: 0px 10px 10px #888888;
+    transform: translateY(-10px);
     transition: transform 0.3s;
     cursor: pointer;
 }
 .ic-download{
     font-size: 35px;
 }
+
 .btn-download-content{
-    font-weight: 900;
+    font-weight: 600;
     font-size: 20px;
 }
+
+/* Modo Oscuro Btn Download*/
+body.dark .btn-download{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid rgb(0, 0, 0);
+}
+body.dark .btn-download:hover{
+    box-shadow: 0px 10px 10px #252525;
+    transform: translateY(-10px);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
 
 /*Brawlers*/
 .section-brawlers{
@@ -90,9 +104,49 @@
     border-radius: 10px;
 }
 .img-section{
-    width: 100%;
+    width: 60%;
 }
 .content-img{
     display: flex;
     justify-content: center;
+}
+
+/*Responsive*/
+@media (min-width: 450px) {
+    .content-btn-download{
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 860px) {
+    .section-about{
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .content-img{
+        width: 100%;
+    }
+    .img-section{
+        width: 80%;
+    }
+    .content-btn-download{
+        gap: 20px;
+    }
+    .section-brawlers{
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .section-modos{
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .section-competitivo{
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }

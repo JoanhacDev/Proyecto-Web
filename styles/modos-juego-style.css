@@ -66,6 +66,14 @@ details[open] summary:hover{
 details[open] p{
     padding: 10px;
 }
+
+/*Modo Oscuro*/
+body.dark .content-accordion{
+    background: white;
+    color: black;
+}
+
+
 @media (min-width: 920px) {
     .section-modos{
         display: grid;
