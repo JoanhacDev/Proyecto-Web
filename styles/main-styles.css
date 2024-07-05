@@ -137,6 +137,7 @@ body.dark .nav-menu{
 .nav-list-show{
     transform: translate(0%);
 }
+
 .nav-link{
     color: white;
     text-decoration: none;
@@ -145,6 +146,7 @@ body.dark .nav-menu{
     vertical-align: middle;
     overflow: hidden;
     padding-bottom: 7px;
+    cursor: pointer;
 }
 .nav-link::before{
     -webkit-transform: perspective(1px) translateZ(0);
