@@ -8,7 +8,16 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
+app.use(express.static('public', {
+    setHeaders: (res, path, stat) => {
+        if (path.endsWith('.css')) {
+            res.set('Content-Type', 'text/css');
+        } else if (path.endsWith('.js')) {
+            res.set('Content-Type', 'application/javascript');
+        }
+    }
+}));
+
 
 app.get('/', (req, res) => {
     console.log('Estás accediendo a la ruta principal'.bgGreen.black.bold);
@@ -25,7 +34,7 @@ app.get('/modos-de-juego', (req, res) => {
     res.render('pages/modos-juego')
 });
 
-app.get('/competitivo' , (req, res) => {
+app.get('/competitivo', (req, res) => {
     console.log('Estás accediendo a la ruta competitivo'.bgRed.black.bold);
     res.render('pages/competitivo')
 });
