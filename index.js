@@ -14,21 +14,21 @@ app.get('/', (req, res) => {
 
 app.get('/brawlers', (req, res) => {
     console.log('Estás accediendo a la ruta brawlers'.bgCyan.black.bold);
-    res.render('brawlers')
+    res.render('pages/brawlers')
 });
 
 app.get('/modos-de-juego', (req, res) => {
     console.log('Estás accediendo a la ruta modos de juego'.bgYellow.black.bold);
-    res.render('modos-juego')
+    res.render('pages/modos-juego')
 });
 
 app.get('/competitivo' , (req, res) => {
     console.log('Estás accediendo a la ruta competitivo'.bgRed.black.bold);
-    res.render('competitivo')
+    res.render('pages/competitivo')
 });
 
 app.use((req, res) => {
-    console.log('404'.bgMagenta.black.bold);
+    console.log('pages/404'.bgMagenta.black.bold);
     res.status(404).render('404');
 });
 
