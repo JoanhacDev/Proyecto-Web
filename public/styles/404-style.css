@@ -1,0 +1,30 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1{
+    font-size: 60px;
+    animation: anima-code alternate 1s infinite;
+}
+@keyframes anima-code {
+    0%{
+        opacity: 1;
+        transform: translateY(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-error{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content-error > img{
+    width: 350px;
+}
